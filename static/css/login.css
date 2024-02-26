@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700);
 * {
   list-style: none;
   text-decoration: none;
@@ -20,6 +21,19 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  font-family: 'Josefin Slab', 'cursive';
+  color: #333;
+  background: #ececec;
+  overflow-y: scroll;
+}
+
+.container {
+  padding-top: 1em;
+  margin-top: 1em;
+  border-top: 
+    solid
+    1px
+    #CCC;
 }
 
 .logo {
@@ -84,7 +98,6 @@ body {
 /* Register */
 
 Label > .expl {
-  color: lightgrey;
   font-size: 1.5rem;
   text-align: start;
   padding: 0.5rem;
@@ -110,4 +123,8 @@ Label > input {
 .register > input {
   width: 50%;
   font-size: 1.5rem;
+}
+
+input::placeholder{
+  font-family: 'Josefin Slab', serif;
 }
