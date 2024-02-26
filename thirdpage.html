@@ -1,0 +1,97 @@
+### 383x776에서 최적 ###
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <title>third page</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        html, body, .wrapper{
+            width:100%;
+            height: 100vh;
+        }
+        p{
+            position: relative;
+            left:330px;
+            top:200px;
+            font-size: 72px;
+        }
+        .wrapper .tableBox{
+            position: relative;
+            top: 16%;
+            left:12%;
+            width: 800px;
+            height: 1200px;
+            overflow-y: scroll;
+            font-size: 48px;
+            border: 2px solid rgb(0, 0, 0);
+        }
+        .tableData{
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        .tableData thead tr th{
+            background: #ebeaea;
+        }
+        .tableData thead tr th, .tableData tbody tr td{
+            padding: 150px 0;
+            box-sizing: border-box;
+        }
+        .last_string{
+            position: relative;
+            left:315px;
+            font-size: 72px;
+            color:white;
+            top:400px;
+
+            text-align: center;
+            width: 400px;
+            height: 100px;
+            background-color: #000;
+            border-radius: 40%;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <div id='title_string'><p>관심사 선택</p></div>
+        <div class="tableBox">
+            <table class="tableData">
+                <div id='select_tag'>
+                        <tr>
+                            <td>치킨</td>
+                            <td>피자</td>
+                            <td>햄버거</td>
+                        </tr>
+                        <tr>
+                            <td>라면</td>
+                            <td>간장게장</td>
+                            <td>소금빵</td>
+                        </tr>
+                        <tr>
+                            <td>뼈</td>
+                            <td>뼈</td>
+                            <td>뼈</td>
+                        </tr>
+                        <tr>
+                            <td>뼈다귀</td>
+                            <td>뼈</td>
+                            <td>뼈</td>
+                        </tr>
+                        <tr>
+                            <td>와!!!!</td>
+                            <td>와</td>
+                            <td>와!!</td>
+                        </tr>
+                </div>
+            </table>
+        </div>
+        <div class='last_string'>완료</div>
+    </div>
+   
+  </body>
+</html>
