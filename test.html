@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
+    <script>
+        var calendarEl
+        var calendar
+      document.addEventListener('DOMContentLoaded', function() {
+        calendarEl = document.getElementById('calendar');
+        calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          selectable: true,
+          default: false,
+          events: [{
+            title:"test",
+            start:"2024-02-27",
+            backgroundColor:"#8B0000",
+            borderColor:"#8B0000"
+        },
+        {
+            title: 'test2',
+            start: '2024-02-26',
+            end: '2024-02-28',
+            backgroundColor: '#008404',
+            borderColor:'#008404' 
+        }], dateClick: function(info) {
+            console.log(calendar.getEventSources(info.dateStr));
+            document.querySelector(".rPghlr").style.bottom = 0;
+          },
+        headerToolbar: {
+            left: '',
+            center: 'title',
+            right: 'today'
+          }
+        });
+        calendar.render();
+      });
+
+
+
+    </script>
+    <style>
+        html{
+            height: 100%;
+            overflow: hidden;
+        }
+        body{
+            height: 99.5%;
+        }
+        :root {
+            --fc-border-color: #fb1c1c;
+            --fc-daygrid-event-dot-width: 5px;
+          }
+        .fc .fc-col-header-cell-cushion {
+        padding: 2px 10px;
+        font-size: 4cqi;
+        }
+        #fc-dom-1{
+        font-size: 4vh;
+        }
+        .fc-daygrid-day-number{
+            font-size: 2vh;
+        }
+        button{
+            font-size: 2vh;
+        }
+        tbody{
+            height: 65vh;
+        }
+        #calendar{
+            height: 75vh;
+        }
+        .rPghlr{
+            background-color: #ffa7a7;
+            width: 100%;
+            position: absolute;
+            height:80vh;
+            bottom: -60vh;
+            z-index: 1;
+        }
+        #rPghlrday{
+            font-size: 2vh;
+            margin: 30px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id='calendar'></div>
+    <div class="rPghlr">
+        <p id="rPghlrday"></p>
+    </div>
+
+    </div>
+  </body>
+  <script>
+    const slide = document.querySelector("#calendar");
+    let slideWidth = slide.clientWidth;
+
+    let startPoint = 0;
+        let endPoint = 0;
+
+        // PC 클릭 이벤트 (드래그)
+        slide.addEventListener("mousedown", (e) => {
+        console.log("mousedown", e.pageX);
+        startPoint = e.pageX; // 마우스 드래그 시작 위치 저장
+        });
+
+        slide.addEventListener("mouseup", (e) => {
+        console.log("mouseup", e.pageX);
+        endPoint = e.pageX; // 마우스 드래그 끝 위치 저장
+        if (startPoint < endPoint) {
+            // 마우스가 오른쪽으로 드래그 된 경우
+            calendar.prev();
+        } else if (startPoint > endPoint) {
+            // 마우스가 왼쪽으로 드래그 된 경우
+            console.log("next move");
+            calendar.next();
+        }
+        });
+
+        // 모바일 터치 이벤트 (스와이프)
+        slide.addEventListener("touchstart", (e) => {
+        console.log("touchstart", e.touches[0].pageX);
+        startPoint = e.touches[0].pageX; // 터치가 시작되는 위치 저장
+        });
+        slide.addEventListener("touchend", (e) => {
+        console.log("touchend", e.changedTouches[0].pageX);
+        endPoint = e.changedTouches[0].pageX; // 터치가 끝나는 위치 저장
+        if (startPoint < endPoint) {
+            // 오른쪽으로 스와이프 된 경우
+            console.log("prev move");
+            calendar.prev();
+        } else if (startPoint > endPoint) {
+            // 왼쪽으로 스와이프 된 경우
+            console.log("next move");
+            calendar.next();
+        }
+        });
+  </script>
+</html>
