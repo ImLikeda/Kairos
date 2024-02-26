@@ -1,0 +1,113 @@
+* {
+  list-style: none;
+  text-decoration: none;
+  border-collapse: collapse;
+  margin: 0px;
+  padding: 0px;
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 100%;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  height: 25%;
+  font-size: 4rem;
+  margin-bottom: 10%;
+  justify-content: center;
+}
+
+.login {
+  height: 60%;
+  margin-bottom: 5%;
+}
+
+.theme {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.id {
+  font-size: 3rem;
+  padding-bottom: 2rem;
+}
+
+.id input {
+  background-color: rgba(233, 231, 231, 0.2);
+  background-image: url(../img/user.png);
+  background-repeat: no-repeat;
+  background-position: 0.5rem center;
+  height: 3rem;
+  padding-left: 4rem;
+}
+
+.pwd {
+  font-size: 3rem;
+  padding-bottom: 4rem;
+}
+
+.pwd input {
+  background-color: rgba(233, 231, 231, 0.2);
+  background-image: url(../img/pwd.png);
+  background-repeat: no-repeat;
+  background-position: 0.5rem center;
+  height: 3rem;
+  padding-left: 4rem;
+}
+
+.login > .loginBtn input {
+  width: 100%;
+  font-size: 3rem;
+}
+
+.search {
+  font-size: 2rem;
+  align-items: center;
+}
+
+.search > span:nth-child(2) {
+  font-size: 2rem;
+}
+
+/* Register */
+
+Label > .expl {
+  color: lightgrey;
+  font-size: 1.5rem;
+  text-align: start;
+  padding: 0.5rem;
+}
+
+Label > input {
+  font-size: 2rem;
+}
+
+.phoneVer {
+  margin-top: 2rem;
+}
+
+.phoneVer > input {
+  width: 50%;
+  font-size: 1.5rem;
+}
+
+.register {
+  margin-top: 2rem;
+}
+
+.register > input {
+  width: 50%;
+  font-size: 1.5rem;
+}
